@@ -1,3 +1,5 @@
+/*************** import function from actions index **************************/
+import {  ADD_FEATURE } from '../actions';
 
 /************initial state **************************/
 const initialState = {
@@ -21,9 +23,18 @@ const initialState = {
 
 /***************reducer ***************************************/
 
-export const addFeature = ( state = initialState, action) => {
+export const addFeatureReducer = ( state = initialState, action) => {
     console.log( "from the addFeature reducer",state, action)
    switch(action.type){
+       case ADD_FEATURE:
+           return {
+               ...state,
+               car: {
+                   ...state.car,
+                   features: [...state.car.features, action.payload.newFeature],
+               },
+               additonalPrice: state.additonalPrice + action.payload.additionalPrice,
+           };
        default:
            return state;
    }

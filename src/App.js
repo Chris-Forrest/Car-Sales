@@ -48,7 +48,7 @@ const mapStateToProps = state => {
     additionalPrice: state.additionalPrice,
   }
 }
-/*************** didn't set up mapDispatchToProps not sure if i'm going to pass dispatch back or just set up in components */
+/*************** didn't set up mapDispatchToProps will do in individual components *************************/
 
 
 /************add connect to the export along with mapStateToProps ****************************/
