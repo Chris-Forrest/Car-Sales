@@ -43,9 +43,9 @@ const App = (props) => {
 /********************map state to props  ***************************/
 const mapStateToProps = state => {
   return {
-    car: state.car,
-    additionalFeatures: state.additionalFeatures,
-    additionalPrice: state.additionalPrice,
+    car: state.addFeatureReducer.car,
+    additionalFeatures: state.addFeatureReducer.additionalFeatures,
+    additionalPrice: state.addFeatureReducer.additionalPrice,
   }
 }
 /*************** didn't set up mapDispatchToProps will do in individual components *************************/

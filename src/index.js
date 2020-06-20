@@ -4,13 +4,14 @@ import App from './App';
 /**********************my imports for redux and initial state *************************/
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { addFeatureReducer } from './reducers/addFeature';
+//import { addFeatureReducer } from './reducers/addFeature';
+import { rootReducer } from './reducers';
 
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
 /**********************create a redux store  ***************************************/
-const store = createStore(addFeatureReducer);
+const store = createStore(rootReducer);
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<Provider store={store}>

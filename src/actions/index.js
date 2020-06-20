@@ -11,3 +11,10 @@ export const addFeature = (feature) => {
         },
     };
 };
+
+export const removeFeature = (feature) => {
+    console.log('remove feature action called');
+    return{
+        type: REMOVE_FEATURE, payload: feature
+    }
+}

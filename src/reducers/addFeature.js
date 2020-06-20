@@ -1,5 +1,5 @@
 /*************** import function from actions index **************************/
-import {  ADD_FEATURE } from '../actions';
+import {  ADD_FEATURE, REMOVE_FEATURE } from '../actions';
 
 /************initial state **************************/
 const initialState = {
@@ -35,6 +35,16 @@ export const addFeatureReducer = ( state = initialState, action) => {
                },
                additionalPrice: state.additionalPrice + action.payload.additionalPrice,
            };
+           case REMOVE_FEATURE:
+            return{
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car:{
+                    ...state.car,
+                    features:state.car.features.filter(feature =>
+                        feature !== action.payload)
+                }
+            }
        default:
            return state;
    }
